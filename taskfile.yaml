@@ -5,12 +5,12 @@ tasks:
     desc: "Show available tasks"
     cmds:
       - task --list-all
-  docker-run:
+  run-buffchan:
     cmds:
-      - docker compose up -d
-  docker-stop:
+      - go run ./internal/synccond/buffchan/examples/simple
+  run-philosophers:
     cmds:
-      - docker compose down
+      - go run ./internal/synccond/philosophers
   test:
     cmds:
       - go test ./... -v
