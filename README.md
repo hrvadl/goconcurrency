@@ -8,6 +8,7 @@ things I've learned from the [Concurrency in Go](https://www.amazon.com/Concurre
 1. To play with `sync.Cond` primitive I have created following programs:
    - [Simple buffered channel implementation](https://github.com/hrvadl/goconcurrency/tree/main/internal/synccond/buffchan)
    - [Dining Philosophers Problem](https://github.com/hrvadl/goconcurrency/tree/main/internal/synccond/philosophers)
+   - [Traffic lights & cars](https://github.com/hrvadl/goconcurrency/tree/main/internal/synccond/trafficgreen)
 
 ## How to run?
 
@@ -42,8 +43,14 @@ To run the buffchan experiment, execute the following command:
 task run-buffchan
 ```
 
-To run the dinin philosophers problem, execute the following command:
+To run the dining philosophers problem, execute the following command:
 
 ```sh
 task run-philosophers
+```
+
+To run the traffic lights & cars problem, execute the following command:
+
+```sh
+task run-traffic
 ```
