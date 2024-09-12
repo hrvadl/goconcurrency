@@ -1,8 +1,15 @@
 package buffchan
 
-// My very simple implementation of buffered channels
+// Very simple implementation of buffered channels
 // It's main purpose is to play with the sync.Cond struct
-// to understand it more deeply.
+// to understand it more deeply. It copies bufferend channel
+// semantics, though without a syntatic sugar.
+//
+// Example:
+// In default program you'll write ch <- data
+// Using my chanel, you can get similar behavior with ch.Put(data).
+// Same goes for reading: data <- ch
+// With my chanel it's data := ch.Read()
 
 import "sync"
 
