@@ -11,6 +11,9 @@ tasks:
   run-philosophers:
     cmds:
       - go run ./internal/synccond/philosophers
+  run-traffic:
+    cmds:
+      - go run ./internal/synccond/trafficgreen
   test:
     cmds:
       - go test ./... -v
