@@ -90,13 +90,14 @@ func pickUpForks(philosopher int) {
 }
 
 func nearestForksIsAvailable(leftFork, rightFork int) bool {
-	availableForks := make([]int, 0, 2)
+	const totalAvailableForksPerPhilosopher = 2
+	availableForks := make([]int, 0, totalAvailableForksPerPhilosopher)
 	for _, fork := range forks {
 		if fork == leftFork || fork == rightFork {
 			availableForks = append(availableForks, fork)
 		}
 	}
-	return len(availableForks) == 2
+	return len(availableForks) == totalAvailableForksPerPhilosopher
 }
 
 func getNearestForks(philosopher int) (int, int) {
@@ -122,13 +123,19 @@ func isFirstPhilosopher(philosopher int) bool {
 func removeForks(forks []int, left, right int) []int {
 	beforeLeft := filterLess(left, forks)
 	afterLeft := filterMore(left, forks)
-	withoutLeft := append(beforeLeft, afterLeft...)
+	withoutLeft := append(copied(beforeLeft), afterLeft...)
 
 	beforeRight := filterLess(right, withoutLeft)
 	afterRight := filterMore(right, withoutLeft)
-	withoutRight := append(beforeRight, afterRight...)
+	withoutRight := append(copied(beforeRight), afterRight...)
 
 	return withoutRight
+}
+
+func copied[T any](slice []T) []T {
+	copiedSlice := make([]T, len(slice))
+	copy(copiedSlice, slice)
+	return copiedSlice
 }
 
 func addForks(forks []int, left, right int) []int {

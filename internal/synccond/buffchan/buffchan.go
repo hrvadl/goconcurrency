@@ -36,7 +36,7 @@ func (c *BufferedChannel[T]) Put(val T) {
 
 func (c *BufferedChannel[T]) Read() T {
 	c.cond.L.Lock()
-	for len(c.data) <= 0 {
+	for len(c.data) == 0 {
 		c.cond.Wait()
 	}
 	c.cond.L.Unlock()
