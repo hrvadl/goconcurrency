@@ -14,6 +14,18 @@ tasks:
   run-traffic:
     cmds:
       - go run ./internal/synccond/trafficgreen
+  run-pool:
+    cmds:
+      - go run ./internal/syncpool/decoders
+  run-errhandle:
+    cmds:
+      - go run ./internal/patterns/errorhandle
+  run-orchan:
+    cmds:
+      - go run ./internal/patterns/orchan
+  run-fan:
+    cmds:
+      - go run ./internal/patterns/fan
   test:
     cmds:
       - go test ./... -v

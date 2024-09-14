@@ -60,3 +60,27 @@ To run the traffic lights & cars problem, execute the following command:
 ```sh
 task run-traffic
 ```
+
+To run the exercise with `sync.Pool`, execute the following command:
+
+```sh
+task run-pool
+```
+
+To run the exercise with error handle in goroutines, execute the following command:
+
+```sh
+task run-errhandle
+```
+
+To run the exercise with the or-chan pattern, execute the following command:
+
+```sh
+task run-orchan
+```
+
+To run the exercise with the fan-in/fan-out patterns, execute the following command:
+
+```sh
+task run-fan
+```
