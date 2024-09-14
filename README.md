@@ -9,6 +9,12 @@ things I've learned from the [Concurrency in Go](https://www.amazon.com/Concurre
    - [Simple buffered channel implementation](https://github.com/hrvadl/goconcurrency/tree/main/internal/synccond/buffchan)
    - [Dining Philosophers Problem](https://github.com/hrvadl/goconcurrency/tree/main/internal/synccond/philosophers)
    - [Traffic lights & cars](https://github.com/hrvadl/goconcurrency/tree/main/internal/synccond/trafficgreen)
+2. To play with `sync.Pool` primitive I have implemented a following program:
+   - [Simple HTTP server, which will cache buffers between requests](https://github.com/hrvadl/goconcurrency/blob/main/internal/syncpool/decoders/handler.go)
+3. To play with `concurrency patterns` I have implemented a following programs:
+   - [Simple fan-in/fan-out program with or-done-chan pattern and a multiple pipelines](https://github.com/hrvadl/goconcurrency/blob/main/internal/patterns/fan/main.go)
+   - [Simple program to demonstrate idiomatic error handling with goroutines](https://github.com/hrvadl/goconcurrency/blob/main/internal/patterns/errorhandle/main.go)
+   - [Simple program to practise or-chan pattern](https://github.com/hrvadl/goconcurrency/blob/main/internal/patterns/orchan/main.go)
 
 ## How to run?
 

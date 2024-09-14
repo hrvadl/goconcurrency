@@ -16,7 +16,11 @@ func orDone[T any](ctx context.Context, ch <-chan T) <-chan T {
 				if !ok {
 					return
 				}
-				result <- val
+				select {
+				case result <- val:
+				case <-ctx.Done():
+					return
+				}
 			case <-ctx.Done():
 				return
 			}
