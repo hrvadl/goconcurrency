@@ -11,12 +11,8 @@ func in[T any](ctx context.Context, streams ...<-chan T) <-chan T {
 
 	multiplex := func(stream <-chan T) {
 		defer wg.Done()
-		for value := range stream {
-			select {
-			case aggregated <- value:
-			case <-ctx.Done():
-				return
-			}
+		for value := range orDone(ctx, stream) {
+			aggregated <- value
 		}
 	}
 
