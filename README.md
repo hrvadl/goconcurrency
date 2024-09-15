@@ -85,6 +85,12 @@ To run the exercise with the fan-in/fan-out patterns, execute the following comm
 task run-fan
 ```
 
+To run the exercise with the tee-chan pattern, execute the following command:
+
+```sh
+task run-teechan
+```
+
 To run the exercise with the multi rate limiter, execute the following command:
 
 ```sh

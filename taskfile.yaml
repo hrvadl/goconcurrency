@@ -26,6 +26,9 @@ tasks:
   run-fan:
     cmds:
       - go run ./internal/patterns/fan
+  run-teechan:
+    cmds:
+      - go run ./internal/patterns/teechan
   run-multilimiter:
     cmds:
       - go run ./internal/scalepatterns/ratelimit
