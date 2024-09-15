@@ -34,7 +34,10 @@ tasks:
       - go run ./internal/scalepatterns/ratelimit
   run-heartbeat:
     cmds:
-      - go run ./internal/scalepatterns/heartbeat
+      - go run ./internal/scalepatterns/heartbeat/cmd/simple
+  run-heal:
+    cmds:
+      - go run ./internal/scalepatterns/heartbeat/cmd/heal
   test:
     cmds:
       - go test ./... -v

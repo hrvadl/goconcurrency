@@ -1,4 +1,4 @@
-package main
+package heartbeat
 
 import (
 	"context"
@@ -8,7 +8,12 @@ import (
 
 const workInterval = time.Second * 3
 
-func worker(ctx context.Context, pulseInterval time.Duration) (<-chan int, <-chan struct{}) {
+func WorkerAdapter(ctx context.Context, pulseInterval time.Duration) <-chan struct{} {
+	_, hb := Worker(ctx, pulseInterval)
+	return hb
+}
+
+func Worker(ctx context.Context, pulseInterval time.Duration) (<-chan int, <-chan struct{}) {
 	var (
 		resCh       = make(chan int)
 		pulse       = make(chan struct{})
@@ -31,6 +36,9 @@ func worker(ctx context.Context, pulseInterval time.Duration) (<-chan int, <-cha
 	sendWork := func() {
 		select {
 		case resCh <- rand.Int():
+		// TODO: interval??
+		case <-pulseTicker:
+			sendPulse()
 		case <-ctx.Done():
 			return
 		}
@@ -38,6 +46,7 @@ func worker(ctx context.Context, pulseInterval time.Duration) (<-chan int, <-cha
 
 	go func() {
 		defer closeAll()
+		// for range 2 { // to simulate like worker is unhealthy
 		for {
 			select {
 			case <-workTicker:

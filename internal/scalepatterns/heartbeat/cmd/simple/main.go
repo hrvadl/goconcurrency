@@ -4,6 +4,8 @@ import (
 	"context"
 	"log/slog"
 	"time"
+
+	"github.com/hrvadl/goconcurrency/internal/scalepatterns/heartbeat"
 )
 
 const (
@@ -16,7 +18,7 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), ctxTimeout)
 	defer cancel()
 
-	stream, hearbeat := worker(ctx, pulseInterval)
+	stream, hearbeat := heartbeat.Worker(ctx, pulseInterval)
 
 	for {
 		select {
