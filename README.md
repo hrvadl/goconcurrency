@@ -40,12 +40,20 @@ task: Available tasks for this project:
 * default:                Show available tasks
 * godoc:                  Host a Godoc web server on the http://localhost:6060/pkg/github.com/hrvadl/converter?m=all
 * run-buffchan:
+* run-errhandle:
+* run-fan:
+* run-heal:
+* run-heartbeat:
+* run-multilimiter:
+* run-orchan:
 * run-philosophers:
+* run-pool:
+* run-teechan:
+* run-traffic:
 * test:
 * install:godoc:          Installed godoc util
 * tidy:mod:               Tidy go mod
 * update:mod:             Update go mod
-
 ```
 
 To run the buffchan experiment, execute the following command:
