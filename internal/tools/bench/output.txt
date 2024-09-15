@@ -1,0 +1,12 @@
+❯ go test -bench=. -benchtime=10s -benchmem
+goos: darwin
+goarch: arm64
+pkg: github.com/hrvadl/goconcurrency/internal/tools/bench
+cpu: Apple M3
+BenchmarkPrime/input_size_100-8                 46025439               232.1 ns/op           616 B/op          7 allocs/op
+BenchmarkPrime/input_size_1000-8                 7996614              1495 ns/op            5112 B/op         10 allocs/op
+BenchmarkPrime/input_size_10000-8                 962220             12483 ns/op           35448 B/op         13 allocs/op
+BenchmarkPrime/input_size_100000-8                 89768            133139 ns/op          464123 B/op         20 allocs/op
+PASS
+ok      github.com/hrvadl/goconcurrency/internal/tools/bench    50.161s
+
