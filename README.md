@@ -99,3 +99,21 @@ To run the exercise with the multi rate limiter, execute the following command:
 ```sh
 task run-multilimiter
 ```
+
+## Main takeaways:
+
+### Channels
+
+1. Owner of the channel is responsible for:
+    - instantiate the channel
+    - perform writes (remember, that writes can also block), or pass ownership to another goroutine
+    - close the channel
+2. Consumer of the channel is responsible for:
+    - knowing when channel is closed
+    - handle blocking (done channel or context with cancellation/timeout/deadline)
+
+### Goroutines
+
+1. Pass errors as values in the result set up
+2. Create pipelines (generators) with the goroutines
+3. Pipelines are easily composable with the patterns described above
