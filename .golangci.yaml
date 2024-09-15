@@ -91,6 +91,7 @@ linters-settings:
       - name: unhandled-error
         arguments:
           - "fmt.Printf"
+          - "fmt.Println"
       - name: add-constant
         disabled: true
       - name: get-return

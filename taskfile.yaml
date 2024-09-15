@@ -26,6 +26,9 @@ tasks:
   run-fan:
     cmds:
       - go run ./internal/patterns/fan
+  run-multilimiter:
+    cmds:
+      - go run ./internal/scalepatterns/ratelimit
   test:
     cmds:
       - go test ./... -v
