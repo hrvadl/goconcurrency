@@ -32,6 +32,9 @@ tasks:
   run-multilimiter:
     cmds:
       - go run ./internal/scalepatterns/ratelimit
+  run-heartbeat:
+    cmds:
+      - go run ./internal/scalepatterns/heartbeat
   test:
     cmds:
       - go test ./... -v

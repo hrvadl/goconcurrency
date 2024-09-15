@@ -18,6 +18,7 @@ things I've learned from the [Concurrency in Go](https://www.amazon.com/Concurre
    - [Simple program to practise tee-chan pattern](https://github.com/hrvadl/goconcurrency/blob/main/internal/patterns/teechan/main.go)
 4. To play with `concurrency at scale patterns` I have created following programs:
    - [Simple program to practise using rate limiter & combining limiters to multi-limiter](https://github.com/hrvadl/goconcurrency/blob/main/internal/scalepatterns/ratelimit/main.go)
+   - [Simple program to practise using heartbeat pattern](https://github.com/hrvadl/goconcurrency/blob/main/internal/scalepatterns/heartbeat/main.go)
 
 ## How to run?
 
@@ -98,6 +99,12 @@ To run the exercise with the multi rate limiter, execute the following command:
 
 ```sh
 task run-multilimiter
+```
+
+To run the exercise with the multi rate limiter, execute the following command:
+
+```sh
+task run-heartbeat
 ```
 
 ## Main takeaways:
